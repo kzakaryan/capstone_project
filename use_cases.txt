@@ -1,1 +1,20 @@
 Capstone Project Use Cases
+
+Students
+As a student, I want to view available courses for the upcoming semester.
+As a student, I want to register for a course to complete my academic requirements.
+As a student, I want to withdraw from a course before the deadline.
+As a student, I want to view my schedule to manage my time.
+As a student, I want to view my grades for completed courses.
+
+Instructors
+As an instructor, I want to view the list of courses I’m teaching.
+As an instructor, I want to see a roster of enrolled students for each course.
+As an instructor, I want to record and submit grades for students in my courses.
+As an instructor, I want to communicate with students about course-related updates.
+
+Administrators
+As an administrator, I want to add new courses and assign instructors to them.
+As an administrator, I want to manage student and instructor accounts.
+As an administrator, I want to set deadlines for registration and withdrawals.
+As an administrator, I want to generate reports on course enrollments and grades.
