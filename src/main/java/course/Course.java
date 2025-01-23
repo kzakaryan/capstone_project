@@ -8,7 +8,6 @@ import java.util.*;
 @Setter
 @Getter
 @RequiredArgsConstructor
-@NoArgsConstructor
 @AllArgsConstructor
 public class Course {
 

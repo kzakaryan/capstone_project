@@ -1,9 +1,6 @@
 package user;
 
-import course.Course;
-
 public interface Registrable {
-    void register(Course course);
-
-    void withdraw(Course course);
+    void register(String courseId);
+    void withdraw(String courseId);
 }

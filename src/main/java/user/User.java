@@ -1,30 +1,27 @@
 package user;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+
+@Setter
+@AllArgsConstructor
 public abstract class User {
 
-    private String userId;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+    protected String userId;
+    protected String firstName;
+    protected String lastName;
+    protected String email;
+    protected String password;
 
-    public void login(String email, String password) {
-
-        if (!(this.email.equals(email) && this.password.equals(password))) {
-            System.out.println("Incorrect email or password");
-        }
-        else {
-            System.out.println("Login successful");
-        }
+    public User() {}
 
 
-    }
+    public abstract void login(String email, String password);
 
     public void logout() {
-
-        System.out.println("Logout successful");
-
+        System.out.println("Logged out");
     }
-
-
 }
