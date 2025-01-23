@@ -1,33 +1,21 @@
 package course;
-
 import lombok.*;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class CourseCatalog {
 
-    private List<Course> courseList;
+    private Map<String, String> courses = new HashMap<>();
 
-    public void addCourse(Course course) {
-        courseList.add(course);
+    public void addCourse(String courseId, String courseName) {
+        courses.put(courseId, courseName);
     }
 
-    public void removeCourse(Course course) {
-        courseList.remove(course);
+    public String findCourseById(String courseId) {
+        return courses.get(courseId);
     }
 
-    public Course getCourseById(String courseId) {
-        return courseList.stream()
-                .filter(course -> course.getCourseId().equals(courseId))
-                .findFirst()
-                .orElse(null);
-    }
-
-    public void listAvailableCourses() {
-        for (Course course : courseList) {
-            System.out.println(course);
-        }
-    }
 }
