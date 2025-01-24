@@ -3,7 +3,6 @@ import lombok.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@Getter
 @Setter
 @NoArgsConstructor
 public class CourseCatalog {
@@ -14,8 +13,11 @@ public class CourseCatalog {
         courses.put(courseId, courseName);
     }
 
+    public Map<String, String> getCourses() {
+        return courses;
+    }
+
     public String findCourseById(String courseId) {
         return courses.get(courseId);
     }
-
 }
