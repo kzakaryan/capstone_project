@@ -10,7 +10,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Course {
 
     private String courseId;
@@ -20,5 +19,6 @@ public class Course {
     private List<Course> coursePrerequisites;
     private List<Student> enrolledStudents;
     private Instructor instructor;
+    private int capacity;
 
 }

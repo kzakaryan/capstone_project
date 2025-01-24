@@ -7,7 +7,6 @@ public class AdministratorRepositoryImpl implements AdministratorRepository {
 
     Administrator administrator;
 
-    @Override
     public void login(String email, String password) {
         if (email.equals(administrator.getEmail()) &&
                 password.equals(administrator.getPassword()) &&
@@ -24,9 +23,7 @@ public class AdministratorRepositoryImpl implements AdministratorRepository {
 
     }
 
-    @Override
     public void logout() {
         System.out.println("Logged out successfully!");
     }
-
 }

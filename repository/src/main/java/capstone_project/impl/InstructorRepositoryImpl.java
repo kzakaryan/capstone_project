@@ -3,29 +3,32 @@ package capstone_project.impl;
 import capstone_project.InstructorRepository;
 import capstone_project.user.Instructor;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class InstructorRepositoryImpl implements InstructorRepository {
 
-    Instructor instructor;
+    private final Map<String, Instructor> instructors = new HashMap<>();
 
     @Override
-    public void login(String email, String password) {
-        if (email.equals(instructor.getEmail()) &&
-                password.equals(instructor.getPassword()) &&
-                instructor.isActive()) {
-            System.out.println(
-                    "Student " +
-                            instructor.getFirstName() +
-                            " " +
-                            instructor.getLastName() +
-                            "logged in successfully!");
-        } else {
-            System.out.println("Wrong Email or Password!");
+    public boolean save(Instructor instructor) {
+        if (instructor != null) {
+            instructors.put(instructor.getUserId(), instructor);
+            return true;
         }
-
+        return false;
     }
 
     @Override
-    public void logout() {
-        System.out.println("Logged out successfully!");
+    public Instructor findById(String instructorId) {
+        return instructors.get(instructorId);
     }
+
+    @Override
+    public List<Instructor> findAll() {
+        return new ArrayList<>(instructors.values());
+    }
+
 }

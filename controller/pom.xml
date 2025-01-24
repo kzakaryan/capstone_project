@@ -3,14 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>capstone_project</groupId>
         <artifactId>capstone_project</artifactId>
         <version>4.0.0-beta-3</version>
     </parent>
 
-    <artifactId>service</artifactId>
+    <artifactId>controller</artifactId>
 
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
@@ -20,14 +19,9 @@
     <dependencies>
         <dependency>
             <groupId>capstone_project</groupId>
-            <artifactId>repository</artifactId>
+            <artifactId>service</artifactId>
             <version>4.0.0-beta-3</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>capstone_project</groupId>
-            <artifactId>model</artifactId>
-            <version>4.0.0-beta-3</version>
         </dependency>
     </dependencies>
 

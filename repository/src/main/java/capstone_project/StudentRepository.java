@@ -1,9 +1,15 @@
 package capstone_project;
 
+import capstone_project.user.Student;
+
+import java.util.List;
+
 public interface StudentRepository {
 
-    void login(String email, String password);
+    boolean save(Student student);
 
-    void logout();
+    Student findById(String studentId);
+
+    List<Student> findAll();
 
 }

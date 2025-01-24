@@ -1,9 +1,14 @@
 package capstone_project;
 
+import capstone_project.user.Instructor;
+import java.util.List;
+
 public interface InstructorRepository {
 
-    void login(String email, String password);
+    boolean save(Instructor instructor);
 
-    void logout();
+    Instructor findById(String instructorId);
+
+    List<Instructor> findAll();
 
 }

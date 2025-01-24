@@ -1,5 +1,6 @@
 package capstone_project.user;
 
+import capstone_project.course.Course;
 import lombok.*;
 import java.util.*;
 
@@ -7,9 +8,14 @@ import java.util.*;
 @Getter
 @RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 public class Student extends User {
 
-    private List<String> enrolledCourses;
+    private int credits;
+    private Map<String, Course> enrolledCourses;
 
+    public Student(String studentId, String studentFirstName, String studentLastName, String studentEmail, String password, boolean b, int i) {
+        super(studentId, studentFirstName, studentLastName, studentEmail, password, b);
+        this.credits = i;
+        this.enrolledCourses = null;
+    }
 }

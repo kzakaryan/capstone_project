@@ -6,7 +6,6 @@ import lombok.*;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-@NoArgsConstructor
 public class User {
 
     private String userId;
