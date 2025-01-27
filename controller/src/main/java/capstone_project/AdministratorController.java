@@ -112,7 +112,11 @@ public class AdministratorController {
         System.out.print("Enter Student Email: ");
         String studentEmail = scanner.nextLine();
 
-        Student student = new Student(studentId, studentFirstName, studentLastName, studentEmail, " ", true, 0);
+        Student student = new Student();
+        student.setUserId(studentId);
+        student.setFirstName(studentFirstName);
+        student.setLastName(studentLastName);
+        student.setEmail(studentEmail);
         if (adminService.addStudent(student)) {
             System.out.println("Student added successfully.");
         } else {
@@ -130,7 +134,11 @@ public class AdministratorController {
         System.out.print("Enter Instructor Email: ");
         String instructorEmail = scanner.nextLine();
 
-        Instructor instructor = new Instructor(instructorId, instructorFirstName, instructorLastName, instructorEmail, "", "", true);
+        Instructor instructor = new Instructor();
+        instructor.setUserId(instructorId);
+        instructor.setFirstName(instructorFirstName);
+        instructor.setLastName(instructorLastName);
+        instructor.setEmail(instructorEmail);
         if (adminService.addInstructor(instructor)) {
             System.out.println("Instructor added successfully.");
         } else {

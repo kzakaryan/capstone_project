@@ -11,4 +11,11 @@
     </parent>
 
     <artifactId>model</artifactId>
+
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-compiler-plugin</artifactId>-->
+<!--        </dependency>-->
+    </dependencies>
 </project>

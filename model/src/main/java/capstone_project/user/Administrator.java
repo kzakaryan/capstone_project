@@ -4,7 +4,6 @@ import lombok.*;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 public class Administrator extends User {
 
 }
