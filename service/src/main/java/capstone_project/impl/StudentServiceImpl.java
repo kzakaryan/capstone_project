@@ -23,12 +23,6 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public boolean registerStudent(Student student) {
-        // Logic to register student (validations, etc.)
-        return studentRepository.save(student);
-    }
-
-    @Override
     public boolean enrollInCourse(String studentId, String courseId) {
         var student = studentRepository.findById(studentId);
         Course course = courseRepository.findById(courseId);
