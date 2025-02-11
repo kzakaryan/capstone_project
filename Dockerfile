@@ -1,29 +1,22 @@
-ARG alpine_version=latest
-FROM alpine:${alpine_version}
-ARG buildno=1
+FROM alpine:latest
 
-RUN apk update && \
-    apk add --no-cache curl bash
+RUN apk add --no-cache \
+    wget \
+    curl \
+    unzip \
+    git \
+    openjdk21 \
+    maven
 
-# Download OpenJDK 23 tarball from OpenJDK site
-RUN curl -L https://download.oracle.com/java/23/latest/jdk-23_linux-aarch64_bin.tar.gz -o jdk-23_linux-aarch64_bin.tar.gz
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+ENV PATH="$JAVA_HOME/bin:$PATH"
+ENV MAVEN_HOME=/usr/share/maven
+ENV PATH="$MAVEN_HOME/bin:$PATH"
 
-# Extract and install OpenJDK 23
-RUN mkdir -p /opt/openjdk && \
-    tar -xvzf jdk-23_linux-aarch64_bin.tar.gz -C /opt/openjdk && \
-    rm jdk-23_linux-aarch64_bin.tar.gz
+WORKDIR /app
 
-# Set JAVA_HOME environment variable
-ENV JAVA_HOME=/opt/openjdk/jdk-23
+COPY . /app
 
-# Add JAVA_HOME/bin to PATH
-ENV PATH=$JAVA_HOME/bin:$PATH
+RUN mvn clean package
 
-WORKDIR /
-WORKDIR app
-WORKDIR build
-
-RUN cd .. \
-    && wget https://dlcdn.apache.org/maven/maven-4/4.0.0-rc-2/binaries/apache-maven-4.0.0-rc-2-bin.tar.gz \
-    && tar -xvzf apache-maven-4.0.0-rc-2-bin.tar.gz \
-    && rm apache-maven-4.0.0-rc-2-bin.tar.gz
+CMD ["mvn", "compile"]
