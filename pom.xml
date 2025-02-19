@@ -51,10 +51,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>net.sf.squirrel-sql.plugins</groupId>
-            <artifactId>postgres</artifactId>
-            <version>3.5.0</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.2</version>
         </dependency>
+
     </dependencies>
 
     <build>
