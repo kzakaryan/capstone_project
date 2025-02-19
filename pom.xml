@@ -50,6 +50,11 @@
             <version>1.18.36</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.sf.squirrel-sql.plugins</groupId>
+            <artifactId>postgres</artifactId>
+            <version>3.5.0</version>
+        </dependency>
     </dependencies>
 
     <build>
