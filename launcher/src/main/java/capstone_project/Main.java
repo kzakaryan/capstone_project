@@ -1,8 +1,5 @@
 package capstone_project;
-
-import capstone_project.*;
 import capstone_project.impl.*;
-import capstone_project.user.Administrator;
 
 public class Main {
 

@@ -35,12 +35,26 @@
             <version>4.0.0</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>capstone_project</groupId>
-            <artifactId>controller</artifactId>
-            <version>4.0.0</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>capstone_project.Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
