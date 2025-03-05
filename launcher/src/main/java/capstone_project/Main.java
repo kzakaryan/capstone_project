@@ -1,8 +1,5 @@
 package capstone_project;
-
-import capstone_project.*;
 import capstone_project.impl.*;
-import capstone_project.user.Administrator;
 
 public class Main {
 
@@ -21,6 +18,6 @@ public class Main {
 
         // Initialize and start the admin console controller
         AdministratorController adminConsoleController = new AdministratorController(adminService, courseService, studentService, instructorService);
-        adminConsoleController.start();
+//        adminConsoleController.start();
     }
 }

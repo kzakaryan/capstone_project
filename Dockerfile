@@ -1,22 +1,13 @@
-FROM alpine:latest
+FROM alpine:latest AS base
 
-RUN apk add --no-cache \
-    wget \
-    curl \
-    unzip \
-    git \
-    openjdk21 \
-    maven
-
-ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
-ENV PATH="$JAVA_HOME/bin:$PATH"
-ENV MAVEN_HOME=/usr/share/maven
-ENV PATH="$MAVEN_HOME/bin:$PATH"
+RUN apk add git openjdk21
 
 WORKDIR /app
 
 COPY . /app
 
-RUN mvn clean package
+RUN ./mvnw clean package
+RUN cp target/project-local-repo/capstone_project/launcher/4.0.0/launcher-4.0.0.jar ./app-jar
 
-CMD ["mvn", "compile"]
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app-jar"]

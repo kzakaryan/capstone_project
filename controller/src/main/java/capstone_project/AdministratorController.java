@@ -35,7 +35,7 @@ public class AdministratorController {
             System.out.println("10. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:

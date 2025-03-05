@@ -1,22 +1,48 @@
-# Course Registration Management System
+# Course Registration and Management System (CLI-Based)
 
-This is a **Course Registration Management** system built using **Java 21** and **Apache Maven**. The application allows students to register for courses, view available courses, and manage their course registrations. It uses a **PostgreSQL** database for storing the data.
+## 📌 Overview
+This is a **CLI-based Java application** for course registration and management, built with **SOLID principles** and modularized for **educational use**. It allows **students, instructors, and administrators** to manage courses, enrollments, and grades efficiently.
 
-This README will guide you through the process of setting up the project and running it locally using Docker for database management.
+The project follows a **microservices-inspired architecture**, dividing responsibilities into three subsystems:
+1. **Course Management** - CRUD for courses
+2. **User Management** - Authentication and user accounts
+3. **Library Management** - Enrollment, grades, notifications
 
-## Prerequisites
+---
 
-Before you begin, ensure that you have the following installed on your machine:
+## 🎯 Features
 
-- **Java 21**: The application is built using Java 21.
-- **Apache Maven**: The project is managed with Maven for dependency management and build automation.
-- **Docker**: Docker is used to create and manage the PostgreSQL container for the database.
+### ✅ **For Students**
+- View available courses
+- Enroll in courses (with prerequisite and capacity checks)
+- Withdraw from courses (before deadlines)
+- View class schedule
+- View grades
 
-## Setup Instructions
+### ✅ **For Instructors**
+- View assigned courses
+- View student rosters
+- Submit student grades
+- Communicate with students
 
-### 1. Clone the Repository
+### ✅ **For Administrators**
+- Add, edit, and remove courses
+- Manage students and instructors
+- Assign instructors to courses
+- Set registration and withdrawal deadlines
+- Generate reports (enrollment, grades)
 
-Clone the project repository to your local machine:
+---
 
+## 🚀 Getting Started
+
+### **Prerequisites**
+- Java **17+**
+- Maven **(for dependency management)**
+- Docker **(for containerized deployment)**
+- JUnit 5 & Mockito **(for testing)**
+
+### **Installation & Setup**
+1. **Clone the repository:**
 ```bash
 git@github.com:kzakaryan/capstone_project.git
