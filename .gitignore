@@ -37,3 +37,4 @@ capstone_project.iml
 mvnw.cmd
 mvnw
 .mvn
+.env
