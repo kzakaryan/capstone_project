@@ -18,6 +18,6 @@ public class Main {
 
         // Initialize and start the admin console controller
         AdministratorController adminConsoleController = new AdministratorController(adminService, courseService, studentService, instructorService);
-//        adminConsoleController.start();
+        adminConsoleController.start();
     }
 }
