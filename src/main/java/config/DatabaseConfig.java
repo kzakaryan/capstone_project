@@ -1,8 +1,8 @@
 package config;
 
-import lombok.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import javax.sql.DataSource;
@@ -14,9 +14,9 @@ public class DatabaseConfig {
     @Profile("dev")
     public DataSource devDataSource() {
         return DataSourceBuilder.create()
-                .url("jdbc:postgresql://localhost:5432/dev_db")
-                .username("dev_user")
-                .password("dev_password")
+                .url("jdbc:postgresql://localhost:5432/postgres")
+                .username("admin")
+                .password("pgadmin")
                 .build();
     }
 
@@ -33,15 +33,12 @@ public class DatabaseConfig {
 
     @Bean
     @Profile("prod")
-    public DataSource prodDataSource(
-            @Value("${DB_URL}") String dbUrl,
-            @Value("${DB_USER}") String dbUser,
-            @Value("${DB_PASSWORD}") String dbPassword) {
+    public DataSource prodDataSource() {
 
         return DataSourceBuilder.create()
-                .url(dbUrl)
-                .username(dbUser)
-                .password(dbPassword)
+                .url("jdbc:postgresql://localhost:5432/postgres")
+                .username("admin")
+                .password("pgadmin")
                 .build();
     }
 }
